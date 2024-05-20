@@ -6,7 +6,6 @@ services:
     restart: unless-stopped
     environment:
       - NET_LOCAL
-      - WIREGUARD_PORT
     cap_add:
       - NET_ADMIN
       - SYS_MODULE

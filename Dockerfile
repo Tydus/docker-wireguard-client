@@ -21,7 +21,7 @@ RUN buildDeps='patch'; \
 
 ENV APP_NAME="vpnc-app"
 
-COPY run.sh firewall.sh firewall6.sh routing.sh /app/
+COPY run.sh routing.sh /app/
 RUN chown -R root:root /app
 RUN chmod -R 0644 /app
 RUN find /app -type d -exec chmod 0755 {} \;

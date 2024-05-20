@@ -16,8 +16,6 @@ Upstream Links
 Quick Start
 ===========
 
-Container configures firewall to block all traffic while VPN network is disconnected.
-
 * Prepare `Docker` host kernel
 
   - The `WireGuard` kernel module must be available in `Docker` host kernel
@@ -29,11 +27,6 @@ Container configures firewall to block all traffic while VPN network is disconne
 
 * Configure environment:
 
-  - `WIREGUARD_PORT`: the `WireGuard` server port number to configure firewall rules
-
-    ```sh
-      export WIREGUARD_PORT=51820
-    ```
   - `WIREGUARD_CLIENT_CONFIG`: path to `config` file:
 
     ```sh
