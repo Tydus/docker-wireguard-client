@@ -18,7 +18,6 @@ if [ "$1" = $APP_NAME ]; then
   /app/firewall.sh
   /app/firewall6.sh
   /app/routing.sh
-  /app/routing6.sh
   wg-quick up wg0
   trap _term SIGTERM
   wg show
