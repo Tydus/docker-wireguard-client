@@ -11,7 +11,7 @@ docker_network_gw6="$(ip -6 route | awk '/default/{print $3}')"
 
 # Add the wireguard endpoints from config file
 
-tr -d ' ' /etc/wireguard/wg0.conf | grep -Po '[^#]*Endpoint=\K.*' | while read peer; do 
+sed 's@#.*$@@g' /etc/wireguard/wg0.conf | tr -d ' ' | grep 'Endpoint=.*' | cut -d= -f2 | while read peer; do 
     case "$peer" in
         [*]:*) 
             if [ -n "$docker_network_gw6" ]; then
