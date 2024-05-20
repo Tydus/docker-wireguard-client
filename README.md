@@ -87,6 +87,11 @@ Container configures firewall to block all traffic while VPN network is disconne
     ```sh
       docker run --rm -it --network=container:wireguard-client alpine:3 /bin/sh
     ```
+  - Or in docker-compose.yml:
+    ```yaml
+      other-container:
+        network_mode: "service:wireguard-client"
+    ```
 
   **NOTE:** The service container needs to be restarted/recreated when VPN container is restarted/recreated,
   otherwise network connection will not be recovered.
