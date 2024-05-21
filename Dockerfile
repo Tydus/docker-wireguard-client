@@ -27,8 +27,5 @@ RUN chmod -R 0644 /app
 RUN find /app -type d -exec chmod 0755 {} \;
 RUN find /app -type f -name '*.sh' -exec chmod 0755 {} \;
 
-HEALTHCHECK --interval=60s --timeout=15s --start-period=120s \
-    CMD curl -L 'https://api.ipify.org'
-
 ENTRYPOINT ["/app/run.sh"]
 CMD ["vpnc-app"]
